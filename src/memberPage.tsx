@@ -7,10 +7,10 @@ import {
   Link
 } from "react-router-dom";
 
-export function BooksPage() {
+export function MemberPage() {
     return (
       <div>
-        <h2>Singluar Book</h2>
+        <h2>members</h2>
       </div>
     );
   }

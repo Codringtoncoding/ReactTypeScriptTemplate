@@ -1,18 +1,30 @@
 import React from 'react';
 import { Home } from './homePage';
-import { BooksPage } from './booksPage'
+import { AllBooks, DisplayAllBooks } from './AllBooks';
+import { BooksPage, BookId } from './bookpage';
+import { MemberPage } from './memberPage';
+import { AllMembers, MemberId } from './members';
 import './App.scss';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
 } from "react-router-dom";
 
 function App() {
   return (
     <Router>
-
+      <header className="App-header">
+        <img src="https://images.unsplash.com/photo-1509291985095-788b32582a81?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80" className="App-logo" alt="logo" />
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+        </a>
+      </header>
       <div className="App">
         <nav className="navbar">
           <ul>
@@ -20,55 +32,43 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/books/1">singular book</Link>
+              <Link to="/books/1">Book</Link>
             </li>
             <li>
-              <Link to="/books">list of books</Link>
+              <Link to="/books">All books</Link>
             </li>
             <li>
-              <Link to="/members/1">member</Link>
+              <Link to="/members/1">Member</Link>
             </li>
             <li>
-              <Link to="/members">list of members</Link>
+              <Link to="/members">All members</Link>
             </li>
           </ul>
         </nav>
         <Switch>
-       
+
           <Route path="/books/:id">
-            <BooksPage />
+            <BooksPage /> {<BookId />}
           </Route>
-          {/* <Route path="//books/:id">
-            <Books/>
-          </Route>
-          <Route path="/members">
-            <Member/>
+          <Route path="/books">
+            <AllBooks /> {<DisplayAllBooks />}
           </Route>
           <Route path="/members/:id">
-            <Members/> */}
-          {/* </Route> */}
+            <MemberPage /> {<MemberId />}
+          </Route>
+          <Route path="/members">
+            <AllMembers />
+          </Route>
+
           <Route path="/">
             <Home />
           </Route>
         </Switch>
-        <header className="App-header">
-          <img src="https://images.unsplash.com/photo-1509291985095-788b32582a81?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80" className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
         <footer>app built by India and Humphrey</footer>
       </div>
     </Router>
   );
 }
+
 
 export default App;

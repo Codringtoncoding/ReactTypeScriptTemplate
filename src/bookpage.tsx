@@ -4,7 +4,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useParams
 } from "react-router-dom";
 
 export function BooksPage() {
@@ -14,3 +15,12 @@ export function BooksPage() {
       </div>
     );
   }
+
+ export function BookId() {
+  let { id } = useParams();
+  return (
+      <div>
+          <h3>The current Book Id is: {id}</h3>
+      </div>
+  );
+}

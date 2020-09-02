@@ -4,13 +4,23 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useParams
 } from "react-router-dom";
 
-export function BooksPage() {
+export function AllMembers() {
     return (
       <div>
-        <h2>Singluar Book</h2>
+        <h2>All Members</h2>
       </div>
     );
   }
+
+export function MemberId() {
+  let { id } = useParams();
+  return (
+      <div>
+          <h3>The current Member Id is: {id}</h3>
+      </div>
+  );
+}
