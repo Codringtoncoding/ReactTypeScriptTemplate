@@ -1,10 +1,12 @@
 import React from 'react';
 import { Home } from './homePage';
 import { AllBooks, DisplayAllBooks } from './AllBooks';
+import { AddNewBook } from './AddNewBook';
 import { BooksPage} from './bookpage';
 import { MemberPage } from './memberPage';
 import { AllMembers, MemberId } from './members';
 import './App.scss';
+import './NavBar.scss';
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,7 +17,6 @@ import {
 function App() {
   return (
     <Router>
-      
       <div className="App">
         <nav className="navbar">
           <ul>
@@ -40,19 +41,25 @@ function App() {
         <img src="https://images.unsplash.com/photo-1509291985095-788b32582a81?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80" className="App-logo" alt="logo" />
       </header>
         <Switch>
-
+          <Route path="/books/add-books">
+            <AddNewBook />
+          </Route>
           <Route path="/books/:id">
             <BooksPage />
           </Route>
+        
           <Route path="/books">
             <AllBooks /> {<DisplayAllBooks />}
           </Route>
+          
           <Route path="/members/:id">
-            <MemberPage /> {<MemberId />}
+            <MemberPage /> 
           </Route>
           <Route path="/members">
             <AllMembers />
           </Route>
+          
+
 
           <Route path="/">
             <Home />

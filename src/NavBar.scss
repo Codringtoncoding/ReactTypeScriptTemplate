@@ -3,30 +3,31 @@
 //     float: none;
 // }
 // //remove bullet points
-//   ul {
-//     list-style-type: none;
-//     margin: 0;
-//     padding: 0;
-//     background-color: #333;
-//     display: flex;
-//     position: sticky;
-//   }
-//   li {
-//     float: none;
-//     text-align: center;
-//   }
-//   li a {
-//     display: block;
-//     color: rgb(218, 85, 24);
-//     text-align: center;
-//     padding: 14px 16px;
-//     text-decoration: none;
-//     background-color: #333;
-//   }
-//   li a:hover:not(.active) {
-//     background-color: #111;
-//   }
-//   .active {
-//     background-color: #549AB6;
-//   }
-// }
+.navbar {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    display: flex;
+    position: sticky;
+  }
+  li {
+    float: none;
+    text-align: center;
+  }
+  li a {
+    display: block;
+    color: rgb(218, 85, 24);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: #333;
+  }
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  .active {
+    background-color: #549AB6;
+  }
+}

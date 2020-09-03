@@ -34,13 +34,16 @@ export function DisplayAllBooks() {
   }, [search]);
 
   return (
+    
     <div>
       <h2>Book List</h2>
+      <button ><a href = "http://localhost:3000/books/add-books">Add Books</a></button>
       <label>
         <input type="text" value={search} onChange={(event) => { setSearch(event.target.value) }} />
       </label>
       {mode === 'Ready' && <SearchResults books={books}></SearchResults>}
       {mode === 'loading' && <p>Loading</p>}
+      <button ><a href = "http://localhost:3000/books/1">next page</a></button>
     </div>
   );
 }
@@ -57,7 +60,7 @@ interface SearchResultProps {
 
 }
 
-function SearchResults({ books }: SearchResultProps) {
+export function SearchResults({ books }: SearchResultProps) {
   console.log()
   const bookList = books.map((book) => {
     return <BookListItem book={book}></BookListItem>
