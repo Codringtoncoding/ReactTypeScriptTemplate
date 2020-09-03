@@ -1,7 +1,7 @@
 import React from 'react';
 import { Home } from './homePage';
 import { AllBooks, DisplayAllBooks } from './AllBooks';
-import { BooksPage, BookId } from './bookpage';
+import { BooksPage} from './bookpage';
 import { MemberPage } from './memberPage';
 import { AllMembers, MemberId } from './members';
 import './App.scss';
@@ -15,16 +15,7 @@ import {
 function App() {
   return (
     <Router>
-      <header className="App-header">
-        <img src="https://images.unsplash.com/photo-1509291985095-788b32582a81?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80" className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-        </a>
-      </header>
+      
       <div className="App">
         <nav className="navbar">
           <ul>
@@ -45,10 +36,13 @@ function App() {
             </li>
           </ul>
         </nav>
+        <header className="App-header">
+        <img src="https://images.unsplash.com/photo-1509291985095-788b32582a81?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80" className="App-logo" alt="logo" />
+      </header>
         <Switch>
 
           <Route path="/books/:id">
-            <BooksPage /> {<BookId />}
+            <BooksPage />
           </Route>
           <Route path="/books">
             <AllBooks /> {<DisplayAllBooks />}
